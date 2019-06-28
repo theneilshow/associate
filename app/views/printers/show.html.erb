@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @printer.name %>
+</p>
+
+<p>
+  <strong>Isprinting:</strong>
+  <%= @printer.isPrinting %>
+</p>
+
+<%= link_to 'Edit', edit_printer_path(@printer) %> |
+<%= link_to 'Back', printers_path %>
+<hr>
+<%= link_to 'Print', new_print_path(:id => @printer.id) %>

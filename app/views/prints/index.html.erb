@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Material</th>
+      <th>Isfinished</th>
+      <th>Printer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prints.each do |print| %>
+      <tr>
+        <td><%= print.name %></td>
+        <td><%= print.material %></td>
+        <td><%= print.isFinished %></td>
+        <td><%= print.printer %></td>
+        <td><%= link_to 'Show', print %></td>
+        <td><%= link_to 'Edit', edit_print_path(print) %></td>
+        <td><%= link_to 'Destroy', print, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Print', new_print_path %>
+<%= link_to 'Home', root_path %>
